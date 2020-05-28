@@ -1,0 +1,40 @@
+<idea-plugin>
+  <id>com.xdl</id>
+  <name>XHttpPlugin</name>
+  <version>1.0</version>
+  <vendor email="819536266@qq.com" url="https://gitee.com/axz123/Xhttp">Xhttp</vendor>
+
+  <description><![CDATA[
+     运行基于SpringBoot,SpringMvc开发的接口,支持PostMapping、GetMapping、DeleteMapping、PutMapping、PatchMapping.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      修改窗口适配问题,完善接口参数缓存.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <codeInsight.lineMarkerProvider  language="JAVA"  implementationClass="com.xdl.provider.XHttpLineMarkerProvider" id="XHttpLineMarkerProvider"   />
+    <!-- Add your extensions here -->
+    <toolWindow id="XHttp"  anchor="right" factoryClass="com.xdl.ui.XHttpWindowFactory"  secondary="true"/>
+  </extensions>
+
+  <actions>
+    <action id="XHttpAction" class="com.xdl.action.XHttpAction" text="XHttpAction" description="XHttpAction">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+    </action>
+  </actions>
+
+</idea-plugin>
